@@ -1,0 +1,26 @@
+.probability_tree_container{
+    position:relative;
+    text-align:right;
+    min-width:500px;
+    margin: auto;
+}
+.probability_tree_container table{
+    width: 100%;
+    position:relative;
+    z-index: 10;
+    text-align:right;
+}
+
+.probability_tree_container td{
+    vertical-align:middle;
+}
+
+.probability_intersection{
+    width:30%;
+}
+.probability_tree_probability{
+    color:red;
+    position:absolute;
+    padding: 0;
+    z-index:11 /* Must be superior to table for editing */
+}

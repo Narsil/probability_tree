@@ -1,0 +1,177 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="src/mathquill.css" />
+    <link rel="stylesheet" type="text/css" href="src/probability_tree.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+    <script type="text/javascript" src="src/mathquill.js"></script>
+    <script type="text/javascript" src="src/probability_tree.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#example3').probability_tree({
+                data : {
+                    H1: {
+                        G1: {
+                            K1: 0.2,
+                            K2: 0.5,
+                            K3: 0.3,
+                            value: 0.2},
+                        G2: {
+                            K1: 0.2,
+                            K2: 0.5,
+                            K3: 0.3,
+                            value: 0.8},
+                        value: 0.4
+                    },
+                    H2: {
+                        G1: {
+                            K1: 0.2,
+                            K2: 0.5,
+                            K3: 0.3,
+                            value: 0.2},
+                        G2: {
+                            K1: 0.2,
+                            K2: 0.5,
+                            K3: 0.3,
+                            value: 0.8},
+                        value: 0.6
+                    }
+                }
+            });
+            $('#display').probability_tree({
+                data : {
+                    'H1': {
+                        'C': {
+                            value: 0.8,
+                            intersection: .28
+                        },
+                        'F': {
+                            value: 0.2,
+                            intersection: .07
+                        },
+                        value: 0.35
+                    },
+                    'H2': {
+                        'C': {
+                            value: 0.5,
+                            intersection: .125
+                        },
+                        'F': {
+                            value: 0.5,
+                            intersection: .125
+                        },
+                        value: 0.25
+                    },
+                    'H3': {
+                        'C': {
+                            value: 0.3,
+                            intersection: .12
+                        },
+                        'F': {
+                            value: 0.7,
+                            intersection: .28
+                        },
+                        value: 0.4
+                    },
+                },
+                proba_editable:false,
+                end_proba:false
+            });
+            $('#example1').probability_tree({
+                data : {
+                    'D': {
+                        'E1': {
+                            'E2': 0.07,
+                            '\\overline{E2}': 0.21,
+                            value: 0.28
+                        },
+                        '\\overline{E1}': {
+                            value: 0.12
+                        },
+                        value: 0.4
+                    },
+                    '\\overline{D}': {
+                        value: 0.6
+                    },
+                },
+                proba_editable:false
+            });
+            $('#example2').probability_tree({
+                data : {
+                    'V': {
+                        'T': {
+                            value: 0.0198
+                        },
+                        '\\overline{T}': {
+                            value: 0.0002
+                        },
+                        value: 0.02
+                    },
+                    '\\overline{V}': {
+                        'T': {
+                            value: 0.0294
+                        },
+                        '\\overline{T}': {
+                            value: 0.9506
+                        },
+                        value: 0.98
+                    },
+                },
+                proba_editable:false
+            });
+            $('#editable-partial').probability_tree({
+                data : {
+                    'D': {
+                        'E1': {
+                            'E2': {value:'...'},
+                            '\\overline{E2}': {value: '...'},
+                            value: '...'
+                        },
+                        '\\overline{E1}': {
+                            value: '...'
+                        },
+                        value: '...'
+                    },
+                    '\\overline{D}': {
+                        value: '...'
+                    },
+                }
+            });
+            $('#editable').probability_tree({
+                tree_editable: true,
+                events_editable: true,
+                intersection_editable:true
+            });
+            $('#editable').on('modified', function(){
+                var data = $('#default2').probability_tree('data');
+                $('#editable-dump').text(JSON.stringify(data));
+            });
+            var data = $('#default2').probability_tree('data');
+            $('#editable-dump').text(JSON.stringify(data));
+        })
+    </script>
+</head>
+<body style="text-align:center">
+    <h1>Display</h1>
+    <div id="display" style="width:800px;margin:auto">
+    </div>
+    <h1>Fully editable</h1>
+    <div id="editable" style="width:800px;margin:auto;">
+    </div>
+    <div id="editable-dump" style="width:800px;margin:auto;">
+    </div>
+    <h1>Example 1</h1>
+    <div id="example1" style="width:800px;margin:auto">
+    </div>
+    <h1>Example 1 (Partially editable)</h1>
+    <div id="editable-partial" style="width:800px;margin:auto;">
+    </div>
+    <h1>Example 2</h1>
+    <div id="example2" style="width:800px;margin:auto">
+    </div>
+    <h1>Example 3</h1>
+    <div id="example3" style="width:800px;margin:auto">
+    </div>
+</body>
+</html>
