@@ -65,7 +65,8 @@ dynamically it has to be in the following form `$(yourdiv).probability_tree({dat
 
 You can be more fine grained for editability when doing adding dynamically:
 
-* tree_editable:  Ability to edit probabilities within the tree
+* probability_editable:  Ability to edit probabilities within the tree
+* tree_editable:  Ability to edit the tree structure
 * event_editable: Ability to edit event names
 * intersection_editable: Ability to edit probabilities at the end of the tree
 

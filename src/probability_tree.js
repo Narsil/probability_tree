@@ -5,7 +5,7 @@
             E1:{value:'...'},
             E2:{value:'...'}
         },
-        proba_editable: true,
+        probability_editable: true,
         events_editable: false,
         tree_editable: false,
         intersection_editable: false
@@ -228,9 +228,9 @@
                 var div = $('<div></div>')
                     .text(label)
                     .addClass(classes.probability_tree)
-                    .mathquill(!this.options.proba_editable || 'editable');
+                    .mathquill(!this.options.probability_editable || 'editable');
 
-                if (options.proba_editable){
+                if (options.probability_editable){
                     div.find('textarea').blur(function(e){
                         that.save_tree(local_path, $(this).closest('.mathquill-editable').mathquill('latex'));
                     });
