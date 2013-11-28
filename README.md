@@ -1,6 +1,6 @@
 # [Probability Tree](http://narsil.github.com)
 
-by [Narsil][]].
+by [Narsil][].
 
 [Narsil]: http://github.com/Narsil
 
@@ -16,8 +16,8 @@ are all over the place.
 
 ## Screenshots
 
-![Display](img/display.jpg "Display")
-![Edit](img/edit.jpg "Edit")
+![Display](https://raw.github.com/Narsil/probability_tree/master/img/display.png "Display")
+![Edit](https://raw.github.com/Narsil/probability_tree/master/img/editable.png "Editable")
 
 
 ## Usage
@@ -83,4 +83,4 @@ All dependencies are included in that file.
 
 [GNU Lesser General Public License](http://www.gnu.org/licenses/lgpl.html)
 
-Copyleft 2013 [Narsil](http://github.com/Narsil)
+Copyleft 2013 [Narsil][]
