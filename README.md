@@ -54,24 +54,33 @@ You can get the data of a tree dynamically (if editable) via
 ###Data you need to provide
 
 The data you need to provide is a JSON in form of a tree. Keys are the name of the
-events in the probability. The object behind the key contains either 'value' which
-is the probability to attain current event. 'intersection' is valid for leaf nodes
-and corresponds to the intersection of probabilities of all the events that happened.
+events in the probability. The object behind the key contain:
 
-All other keys must correspond to subsequent events and have the same structure.
+* 'value' which is the probability to attain current event.
+* 'intersection' (leaf nodes) corresponds to the intersection of probabilities of all the previous events.
+* All other keys must correspond to subsequent events and have the same structure.
 
 When adding via HTML you directly dump the JSON in your div., When adding 
 dynamically it has to be in the following form `$(yourdiv).probability_tree({data: json})`.
 
-You can be more fine grained for editability when doing adding dynamically:
+When you add dynamically, you can fine tune editability of the tree:
 
 * probability_editable:  Ability to edit probabilities within the tree
 * tree_editable:  Ability to edit the tree structure
 * event_editable: Ability to edit event names
 * intersection_editable: Ability to edit probabilities at the end of the tree
 
+For example, 
 
-All values (probabilities, event names) can be LaTeX as they are going to be mathquilled.
+    $(yourdiv).probability_tree({ 
+        data: data,
+        tree_editable: false,
+        event_editable: false,
+        probability_editable: true,
+        intersection_editable: true})
+
+
+All values (probabilities, event names) can be in LaTeX format.
 
 ## Testing
 
